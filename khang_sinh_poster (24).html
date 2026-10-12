@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Hướng dẫn sử dụng và bảo quản kháng sinh tiêm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-dark:#0B4F54;
+    --teal:#0E6B71;
+    --teal-tint:#EAF4F3;
+    --teal-tint2:#F5FAF9;
+    --ink:#1C2B2C;
+    --ink-soft:#4B5D5E;
+    --line:#CFE0DE;
+    --red:#B23A2E;
+    --red-tint:#FBEAE7;
+    --amber:#B8791A;
+    --amber-tint:#FCF3E3;
+    --blue-tint:#E9F1FB;
+    --blue-strong:#1E5FA8;
+    --green:#2E7D46;
+    --green-tint:#E7F5EA;
+    --orange:#C2600A;
+    --orange-tint:#FDEBD8;
+    --gray:#6B7877;
+    --gray-tint:#EEF1F0;
+
+    --wfi:#FFFFFF;
+    --wfi-border:#95A5A6;
+    --ns:#2E7DD1;
+    --g5:#F0BF3D;
+    --g10:#B96A34;
+    --rl:#3F9142;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#DCE7E6;
+    font-family:'Be Vietnam Pro',sans-serif;
+    color:var(--ink);
+    padding:18px;
+  }
+  .sheet{
+    max-width:1620px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 6px 28px rgba(11,79,84,0.18);
+    padding:26px 30px 20px;
+  }
+  .masthead{
+    display:flex;
+    align-items:center;
+    border-bottom:3px solid var(--teal-dark);
+    padding-bottom:14px;
+    margin-bottom:14px;
+  }
+  .masthead .crest{
+    height:66px;
+    display:flex;align-items:center;justify-content:flex-start;
+    flex:0 0 auto;
+    margin-right:28px;
+  }
+  .masthead .crest img{height:66px;width:auto;display:block;}
+  .masthead h1{
+    font-size:22px;
+    letter-spacing:.3px;
+    color:var(--teal-dark);
+    margin:0;
+    font-weight:800;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .masthead .subtitle-offset{
+    display:inline-block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+    vertical-align:top;
+    line-height:0;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:.3px;
+    white-space:nowrap;
+  }
+  .masthead .subtitle{
+    text-align:left;
+    margin:3px 0 0;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+  .masthead p{
+    margin:2px 0 0;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+  }
+  colgroup col.c-stt{width:32px;}
+  colgroup col.c-inn{width:11%;}
+  colgroup col.c-brand{width:15%;}
+  colgroup col.c-recon{width:14%;}
+  colgroup col.c-dilute{width:17%;}
+  colgroup col.c-route{width:17%;}
+  colgroup col.c-store{width:15%;}
+
+  thead th{
+    background:var(--teal-dark);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    padding:8px 8px;
+    text-align:left;
+    border-right:1px solid rgba(255,255,255,0.18);
+  }
+  thead th:first-child{text-align:center;}
+
+  tbody td{
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+    padding:8px 8px;
+    vertical-align:middle;
+    font-size:12.3px;
+    line-height:1.35;
+  }
+  tbody tr:nth-child(even){background:#fff;}
+  tbody td:first-child{
+    text-align:center;
+    font-weight:700;
+    color:var(--teal-dark);
+    font-size:13px;
+  }
+  tbody tr.empty td{color:#9AA6A6;}
+  tbody tr.empty td.inn-cell{color:#7C8A8A;}
+
+  .inn-cell{font-weight:700;color:var(--ink);overflow-wrap:break-word;word-break:break-word;}
+  .brand-cell{color:var(--teal-dark);font-weight:800;font-style:normal;overflow-wrap:normal;word-break:normal;}
+  .brand-name{display:block;}
+  .brand-dose{display:block;font-weight:700;font-size:11.5px;margin-top:1px;}
+
+  .pending{font-size:11px;color:#9AA6A6;font-style:italic;}
+
+  /* --- icon system --- */
+  .visual{display:flex;flex-direction:column;align-items:center;}
+  .visual > *{margin-bottom:4px;}
+  .visual > *:last-child{margin-bottom:0;}
+  .opt{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;}
+  .opt > *{margin-right:6px;}
+  .opt > *:last-child{margin-right:0;}
+  .icon-set{display:flex;}
+  .icon-set > *{margin-right:2px;}
+  .icon-set > *:last-child{margin-right:0;}
+  .note{font-size:10px;color:var(--ink-soft);text-align:center;line-height:1.6;}
+
+  .drop-icon{width:26px;height:26px;flex:0 0 auto;display:block;}
+  .drop-icon path{stroke:rgba(0,0,0,0.18);stroke-width:1;}
+  .drop-icon.wfi path{fill:#E7EFF0;}
+  .drop-icon.ns path{fill:var(--ns);}
+  .drop-icon.g5 path{fill:var(--g5);}
+  .drop-icon.g10 path{fill:var(--g10);}
+  .drop-icon.rl path{fill:var(--rl);}
+
+  .sq{
+    width:21px;height:21px;
+    border-radius:5px;
+    flex:0 0 auto;
+  }
+  .sq.ns{background:var(--ns);}
+  .sq.g5{background:var(--g5);}
+  .sq.g10{background:var(--g10);}
+  .sq.rl{background:var(--rl);}
+  .sq.wfi{background:#E7EFF0;border:1px solid #A9BEC0;}
+
+  .pill{
+    display:inline-block;
+    border:1.5px solid #B9C9C8;
+    border-radius:13px;
+    padding:1px 9px;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--ink);
+    background:#fff;
+    white-space:nowrap;
+  }
+  .pill.recon{border-color:var(--teal);color:var(--teal-dark);}
+  .pill.dilute{border-color:var(--blue-strong);color:var(--blue-strong);}
+  .vol-box{
+    display:inline-block;
+    border:1.5px solid #B9C9C8;
+    border-radius:13px;
+    padding:0px 8px;
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  /* --- route text --- */
+  .route-line{font-size:11.6px;overflow-wrap:break-word;word-break:break-word;}
+  .route-line b{color:var(--teal-dark);}
+  .route-line + .route-line{margin-top:2px;}
+
+  /* --- storage badges --- */
+  .badge{
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:20px;
+    font-size:10.5px;
+    font-weight:700;
+    margin-bottom:3px;
+  }
+  .badge.cold{background:var(--blue-tint);color:var(--blue-strong);}
+  .badge.room{background:var(--green-tint);color:var(--green);}
+  .badge.now{background:var(--red-tint);color:var(--red);}
+  .badge.time{background:var(--amber-tint);color:var(--amber);}
+  .badge.unspec{background:var(--gray-tint);color:var(--gray);}
+  .store-line{font-size:11px;color:var(--ink-soft);line-height:1.5;margin-bottom:2px;}
+  .store-line b{color:var(--ink);font-weight:700;}
+  .store-detail{font-size:10.5px;color:var(--ink-soft);line-height:1.35;}
+
+  /* --- legend --- */
+  .legend{
+    margin-top:16px;
+    border-top:2px solid var(--teal-dark);
+    padding-top:12px;
+    display:table;
+    width:100%;
+    table-layout:fixed;
+  }
+  .legend > div{display:table-cell;vertical-align:top;padding-right:16px;}
+  .legend > div:first-child{width:38%;}
+  .legend h3{
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    color:var(--teal-dark);
+    margin:0 0 6px;
+    font-weight:800;
+  }
+  .legend-row{display:flex;align-items:center;margin-bottom:5px;font-size:11.3px;}
+  .legend-row > *:first-child{margin-right:7px;}
+  .mini-drop-icon{width:21px;height:21px;flex:0 0 auto;}
+  .mini-drop-icon path{stroke:rgba(0,0,0,0.18);stroke-width:1;}
+  .mini-drop-icon.wfi path{fill:#E7EFF0;}
+  .mini-drop-icon.ns path{fill:var(--ns);}
+  .mini-drop-icon.g5 path{fill:var(--g5);}
+  .mini-drop-icon.g10 path{fill:var(--g10);}
+  .mini-drop-icon.rl path{fill:var(--rl);}
+  .abbr-grid{display:flex;flex-direction:column;font-size:11.3px;}
+  .abbr-grid div{white-space:nowrap;margin-bottom:5px;}
+  .abbr-grid div:last-child{margin-bottom:0;}
+  .abbr-grid div b{color:var(--teal-dark);}
+
+  .signoff{
+    margin-top:14px;
+    text-align:center;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--teal-dark);
+    border-top:1px dashed var(--line);
+    padding-top:8px;
+  }
+
+  @page{size:A3 landscape;margin:8mm;}
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{box-shadow:none;border-radius:0;max-width:none;padding:6mm 8mm;}
+    table{page-break-inside:auto;}
+    tr{page-break-inside:avoid;page-break-after:auto;}
+    thead{display:table-header-group;}
+    .masthead{page-break-after:avoid;}
+    .legend, .signoff{page-break-inside:avoid;}
+    .masthead h1{display:none;}
+    .print-title-row{display:table-row !important;}
+  }
+  .print-title-row{display:none;}
+  .print-title-cell{
+    background:var(--teal-dark);
+    color:#fff;
+    text-align:center;
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:.4px;
+    padding:10px 0;
+    border:none;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="crest">
+      <img src="data:image/png;base64,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" alt="Logo Khoa Dược">
+    </div>
+    <div>
+      <h1>Hướng dẫn sử dụng &amp; bảo quản kháng sinh tiêm</h1>
+      <div class="subtitle"><span class="subtitle-offset">HƯỚ</span>Sử dụng tại Bệnh viện Đa khoa Thiện Hạnh năm 2026</div>
+    </div>
+  </div>
+
+  <table>
+    <colgroup>
+      <col class="c-stt"><col class="c-inn"><col class="c-brand"><col class="c-recon">
+      <col class="c-dilute"><col class="c-route"><col class="c-store">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Hoạt chất</th>
+        <th>Tên thuốc</th>
+        <th>Hoàn nguyên</th>
+        <th>Pha loãng</th>
+        <th>Đường dùng</th>
+        <th>Bảo quản sau pha</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>1</td>
+        <td class="inn-cell">Amikacin</td>
+        <td class="brand-cell"><span class="brand-name">ABICIN</span><span class="brand-dose">250mg</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">có sẵn 2ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div><div class="pill dilute">50–100ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b></div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(sơ sinh, trẻ nhỏ: 1–2 giờ)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Nên dùng ngay</span></div>
+          <div class="store-line"><span class="badge cold">2–8°C ≤24h</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="inn-cell">Amikacin</td>
+        <td class="brand-cell"><span class="brand-name">AMIKAVER</span><span class="brand-dose">500mg/2ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div><div class="pill dilute">100–200ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b></div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(sơ sinh, trẻ nhỏ: 1–2 giờ)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="inn-cell">Amoxicilin + A.Clavulanic</td>
+        <td class="brand-cell"><span class="brand-name">AXUKA</span><span class="brand-dose">1g+0,2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq wfi"></div></div><div class="pill dilute">100ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TMC</b> 3–4 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 30–40 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(trẻ &lt;3 tháng: chỉ Truyền TM)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="inn-cell">Amoxicilin + A.Clavulanic</td>
+        <td class="brand-cell"><span class="brand-name">CLAMINAT</span><span class="brand-dose">1g+0,2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq wfi"></div><div class="sq rl"></div></div><div class="pill dilute">100ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TMC</b> 3–4 phút (WFI)</div>
+          <div class="route-line"><b>Truyền TM</b> 30–40 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(không dùng cho trẻ &lt;40kg)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="inn-cell">Ampicilin + Sulbactam</td>
+        <td class="brand-cell"><span class="brand-name">AUPISIN</span><span class="brand-dose">1g+0,5g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq rl"></div><div class="sq wfi"></div></div><div class="pill dilute">50–100ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">3,2ml</span></div>
+          <div class="route-line"><b>TMC</b> 10–15 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 15–30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge room">Nhiệt độ phòng (&lt;25°C)</span></div>
+          <div class="store-line"><b>TB:</b> <span class="badge room">1 giờ</span></div>
+          <div class="store-line"><b>TMC, Truyền TM:</b> <span class="badge room">8 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="inn-cell">Benzathin Benzylpenicilin</td>
+        <td class="brand-cell"><span class="brand-name">BENZATHYL BENZYLPENICILIN</span><span class="brand-dose">1.200.000 IU</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">≥3ml</div></div></div></td>
+        <td><div class="visual"><span class="pending">Không pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> </div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="inn-cell">Cefazolin</td>
+        <td class="brand-cell"><span class="brand-name">CEFAZOLIN</span><span class="brand-dose">2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">5–10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq wfi"></div></div><div class="pill dilute">50–100ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TMC</b> 3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="inn-cell">Cefazolin</td>
+        <td class="brand-cell"><span class="brand-name">ZOLIFAST</span><span class="brand-dose">2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g10" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">≥8ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq rl"></div><div class="sq wfi"></div></div><div class="pill dilute">50–100ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TMC</b> 3–5 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">Liều &gt;1g nên được Truyền TM trong 30–60 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút (ưu tiên)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Nên dùng ngay</span></div>
+          <div class="store-line"><b>TB, TMC:</b> <span class="badge room">≤25°C 2 giờ</span></div>
+          <div class="store-line"><b>Truyền TM:</b> <span class="badge cold">2–8°C 12 giờ</span> hoặc <span class="badge room">≤25°C 9 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="inn-cell">Cefepim</td>
+        <td class="brand-cell"><span class="brand-name">CEFEPIME GERDA</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div><div class="pill dilute">50–100ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">2,4 ml</span></div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">20ml</span>, 3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><b>TM, TB:</b> <span class="badge room">20–25°C 24 giờ</span></div>
+          <div class="store-line"><span class="badge cold">2–8°C 7 ngày</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="inn-cell">Cefoperazon</td>
+        <td class="brand-cell"><span class="brand-name">BIFOPEZON</span><span class="brand-dose">2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq wfi"></div><div class="sq ns"></div></div><div class="pill dilute">20–100ml</div></div><div class="note">WFI: không quá 20ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">8 ml</span> (WFI)</div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">20 ml</span>, ≥3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 15–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="inn-cell">Cefoperazon</td>
+        <td class="brand-cell"><span class="brand-name">CEFOPERAZONE</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g10" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">5ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq g5"></div><div class="sq g10"></div><div class="sq ns"></div></div></div><div class="note"><b>Sau hoàn nguyên</b><br><span style="white-space:nowrap;">Nồng độ cuối 2–50mg/ml</span></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">3,8 ml</span></div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">10 ml</span></div>
+          <div class="route-line"><b>Truyền TM</b> <span class="vol-box">20–40ml</span>, 15–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="inn-cell">Cefoperazon</td>
+        <td class="brand-cell"><span class="brand-name">CEFOPERAZONE 2000</span><span class="brand-dose">2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g10" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq g5"></div><div class="sq g10"></div><div class="sq ns"></div></div></div><div class="note"><b>Sau hoàn nguyên</b><br><span style="white-space:nowrap;">Nồng độ cuối 2–50mg/ml</span></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">6–8ml</span></div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">Nồng độ &gt;250mg/ml, 5,4ml WFI + 1,8ml lidocain 2%</div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">20ml</span>, ≥3–5 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(nồng độ 100mg/ml)</div>
+          <div class="route-line"><b>Truyền TM</b> 15–60 phút (ưu tiên)</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Nên dùng ngay</span></div>
+          <div class="store-line"><span class="badge cold">2–8°C ≤24h</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="inn-cell">Cefoperazon + Sulbactam</td>
+        <td class="brand-cell"><span class="brand-name">TRAFUCEF-S</span><span class="brand-dose">1g+1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq wfi"></div><div class="sq ns"></div><div class="sq g5"></div><div class="sq rl"></div></div></div><div class="note" style="text-align:left;">Nồng độ&nbsp;5–125mg/ml.<br>*RL: 170ml<br>Hoàn nguyên trước bằng 6,7ml WFI<br>Nồng độ&nbsp;khoảng&nbsp;5mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> (<span class="vol-box" style="white-space:nowrap;">6,7ml</span> WFI + <span class="vol-box" style="white-space:nowrap;">1,3ml</span> lidocain 2%)</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(nồng độ&nbsp;125mg/ml)</div>
+          <div class="route-line"><b>TMC</b> ≥3 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 15–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="inn-cell">Cefotaxim</td>
+        <td class="brand-cell"><span class="brand-name">TENAMYD-CEFOTAXIME</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq g5"></div><div class="sq ns"></div><div class="sq rl"></div></div><div class="pill dilute">50ml hoặc 100ml</div></div><div class="note">Hoặc sau hoàn nguyên pha với 50–1000ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">2–5 ml</span></div>
+          <div class="route-line"><b>TMC</b> 3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 20–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Nên dùng ngay</span></div>
+          <div class="store-line"><span class="badge cold">2–8°C 12 giờ</span> hoặc <span class="badge room">≤25°C 4 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="inn-cell">Cefoxitin</td>
+        <td class="brand-cell"><span class="brand-name">VICEFOXITIN</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq g5"></div><div class="sq g10"></div><div class="sq ns"></div></div><div class="pill dilute">50ml hoặc 100ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">2ml</span> <span style="white-space:nowrap;">(WFI, Lidocain 0,5%/ 1%)</span></div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">10ml</span> (WFI), 3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> </div>
+        </td>
+        <td>
+          <div class="store-line"><b>TM:</b> <span class="badge room">Nhiệt độ phòng 6 giờ</span> hoặc <span class="badge cold">&lt;5°C 1 tuần</span></div>
+          <div class="store-line"><b>Truyền TM:</b> <span class="badge room">Nhiệt độ phòng 24 giờ</span> hoặc <span class="badge cold">&lt;5°C 1 tuần</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="inn-cell">Ceftaroline fosamil</td>
+        <td class="brand-cell"><span class="brand-name">ZINFORO</span><span class="brand-dose">600mg</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq rl"></div></div><div class="pill dilute">50/100/250ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b></div>
+          <div class="route-line">Liều chuẩn: 5–60 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(ưu tiên truyền trong 60ph)</div>
+          <div class="route-line">Liều cao: 120 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="inn-cell">Ceftazidim</td>
+        <td class="brand-cell"><span class="brand-name">TV-ZIDIM</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq wfi"></div><div class="sq ns"></div><div class="sq g5"></div></div><div class="pill dilute">50ml</div></div><div class="note">Nồng độ khoảng 20mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">3 ml</span> (WFI)</div>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">10 ml</span> (WFI), 3–5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> ≥30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge room">20–25°C trong 12 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="inn-cell">Ceftazidime + Avibactam</td>
+        <td class="brand-cell"><span class="brand-name">ZAVICEFTA</span><span class="brand-dose">2g/0,5g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq rl"></div></div></div><div class="note" style="text-align:left;"><b>Sau hoàn nguyên</b><br><b style="color:var(--teal-dark);">Túi dịch truyền</b> 50–250ml<br>Nồng độ&nbsp;8–40mg/ml<br><b style="color:var(--teal-dark);">Bơm tiêm dịch truyền</b> 50ml<br>Nồng độ&nbsp;40mg/ml (bệnh nhi 3–12 tháng: 20mg/ml)</div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 120 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="inn-cell">Ceftriaxon</td>
+        <td class="brand-cell"><span class="brand-name">CEFTRIONE</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g10" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">9,6ml</div></div><div class="note">Nồng độ 100mg/ml</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq wfi"></div><div class="sq ns"></div><div class="sq g5"></div><div class="sq g10"></div></div><div class="pill dilute">50–100ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">2,6ml</span> hoặc <span class="vol-box">3,1ml</span> <span style="white-space:nowrap;">(WFI, NS, D5%)</span>, 2–4 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">(nồng độ 250 hoặc 350mg/ml)</div>
+          <div class="route-line"><b>TMC</b> 2–4 phút</div>
+          <div class="route-line"><b>Truyền TM</b> ≥30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><b>TB:</b> <span class="badge room">Nhiệt độ phòng 24 giờ</span> hoặc <span class="badge cold">4°C 3 ngày</span></div>
+          <div class="store-line"><b>TM:</b> <span class="badge room">Nhiệt độ phòng 3 ngày</span> hoặc <span class="badge cold">4°C 10 ngày</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="inn-cell">Ceftriaxon</td>
+        <td class="brand-cell"><span class="brand-name">ROCEPHIN Inj</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml có sẵn</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq g10"></div><div class="sq wfi"></div></div><div class="pill dilute">20ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TM</b> <span class="vol-box">10ml</span>, 2–4 phút</div>
+          <div class="route-line"><b>Truyền TM</b> ≥30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td class="inn-cell">Ciprofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">CIPROFLOXACIN IMP</span><span class="brand-dose">200mg/100ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> ≥60 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td class="inn-cell">Ciprofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">CIPROFLOXACIN IMP</span><span class="brand-dose">400mg/200ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> ≥60 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td class="inn-cell">Clindamycin</td>
+        <td class="brand-cell"><span class="brand-name">CLINDACINE</span><span class="brand-dose">300mg</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div><div class="pill dilute">50–100ml</div></div><div class="note">Nồng độ ≤18mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> không pha loãng</div>
+          <div class="route-line"><b>Truyền TM</b> ≤30mg/phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">300mg/50ml: 10ph</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">600mg/50ml: 20ph</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">900mg/50–100ml: 30ph</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">không quá 1200mg/lần truyền trong 1 giờ</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge time">Trong vòng 24 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td class="inn-cell">Cloxacilin</td>
+        <td class="brand-cell"><span class="brand-name">CLOXACILLIN</span><span class="brand-dose">2g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">6,8ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div></div></div><div class="note">Nồng độ cuối 1–2mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 30–40 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="inn-cell">Colistin</td>
+        <td class="brand-cell"><span class="brand-name">COLIREX</span><span class="brand-dose">1MIU</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">5ml có sẵn</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq rl"></div></div><div class="pill dilute">thường 50ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> </div>
+          <div class="route-line"><b>TMC</b> </div>
+          <div class="route-line"><b>Truyền TM</b> 60 phút</div>
+          <div class="route-line"><b>Khí dung</b></div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge cold">2–8°C 24 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td class="inn-cell">Colistin</td>
+        <td class="brand-cell"><span class="brand-name">BIDICOLIS</span><span class="brand-dose">2MIU</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">NS: 5ml có sẵn</div></div><div class="note">WFI cũng dùng được (không có sẵn)</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div></div><div class="pill dilute">thường 50ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>TM</b> <span class="vol-box">≤10ml</span></div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+          <div class="route-line"><b>Tiêm tuỷ sống · não thất</b> <span class="vol-box">≤1ml</span> (125.000 IU/ml)</div>
+          <div class="route-line"><b>Khí dung</b></div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td class="inn-cell">Ertapenem</td>
+        <td class="brand-cell"><span class="brand-name">ERTAPENEM VCP</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div></div><div class="pill dilute">50ml</div></div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">3,2ml</span> (<span style="white-space:nowrap;">lidocain hydroclorid 1%</span><br><span style="white-space:nowrap;">không chứa epinephrin)</span></div>
+          <div class="route-line"><b>Truyền TM</b> 30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><b>TB:</b> <span class="badge room">1 giờ sau pha</span></div>
+          <div class="store-line"><b>Truyền TM:</b> <span class="badge room">25°C 6 giờ</span> hoặc <span class="badge cold">2–8°C 24 giờ</span></div>
+          <div class="store-detail">Nên dùng trong vòng 4 giờ sau khi lấy khỏi tủ lạnh</div>
+        </td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td class="inn-cell">Gentamicin</td>
+        <td class="brand-cell"><span class="brand-name">GENTAMICIN</span><span class="brand-dose">80mg</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div></div><div class="note">Tỉ lệ 1ml dịch truyền : 1mg gentamicin</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> </div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td class="inn-cell">Imipenem + Cilastatin</td>
+        <td class="brand-cell"><span class="brand-name">CEPEMID</span><span class="brand-dose">0,5g+0,5g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g10" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq g10"></div></div><div class="pill dilute">100ml hoặc 200ml</div></div><div class="note">Nồng độ 2,5mg/ml hoặc 5mg/ml (Manitol 10% cũng dùng được)</div></div></td>
+        <td>
+          <div class="route-line"><b>TB</b> <span class="vol-box">2ml</span><br>(<span style="white-space:nowrap;">lidocain hydroclorid 1%</span><br><span style="white-space:nowrap;">không chứa epinephrin)</span></div>
+          <div class="route-line"><b>Truyền TM</b> 30–60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><b>TB:</b> <span class="badge room">1 giờ sau pha</span></div>
+          <div class="store-line"><b style="white-space:nowrap;">Truyền TM (NS, G5%, G10%):</b> <span class="badge room">Nhiệt độ phòng 4 giờ</span> hoặc <span class="badge cold">2–8°C 24 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td class="inn-cell">Levofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">BIVELOX I.V</span><span class="brand-dose">500mg/100ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> ≥60 phút/500mg</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td class="inn-cell">Levofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">CRAVIT I.V</span><span class="brand-dose">500mg/100ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> tối thiểu 60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge time">3 giờ sau khi mở nắp</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td class="inn-cell">Levofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">CRAVIT I.V</span><span class="brand-dose">750mg/150ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> tối thiểu 90 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge time">3 giờ sau khi mở nắp</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td class="inn-cell">Levofloxacin (hemihydrat)</td>
+        <td class="brand-cell"><span class="brand-name">Levofloxacin/Cooper</span><span class="brand-dose">500mg/100ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> tối thiểu 60 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge time">Trong vòng 3 giờ sau khi chọc thủng nắp cao su</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td class="inn-cell">Linezolid</td>
+        <td class="brand-cell"><span class="brand-name">ASHZOLID</span><span class="brand-dose">600mg/300ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 30–120 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td class="inn-cell">Meropenem</td>
+        <td class="brand-cell"><span class="brand-name">MERONEM</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div><div class="note">Nồng độ 50mg/ml</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div></div><div class="note">Nồng độ cuối 1–20mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TM</b> 5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 15–30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td class="inn-cell">Meropenem *</td>
+        <td class="brand-cell"><span class="brand-name">MIZAPENEM</span><span class="brand-dose">1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div><div class="note">Nồng độ 50mg/ml</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div></div><div class="note">Nồng độ cuối 1–20mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TM</b> 5 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 15–30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td class="inn-cell">Metronidazole</td>
+        <td class="brand-cell"><span class="brand-name">METRONIDAZOL KABI</span><span class="brand-dose">500mg/100ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 5ml/phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">tối thiểu 20 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td class="inn-cell">Moxifloxacin</td>
+        <td class="brand-cell"><span class="brand-name">MOXIFLOXACIN</span><span class="brand-dose">400mg/250ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> tối thiểu 60 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td class="inn-cell">Ofloxacin</td>
+        <td class="brand-cell"><span class="brand-name">OFLOXACIN</span><span class="brand-dose">200mg/40ml</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> tối thiểu 30 phút</div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td class="inn-cell">Piperacilin + Tazobactam</td>
+        <td class="brand-cell"><span class="brand-name">PIPEBAMID</span><span class="brand-dose">4g+0,5g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">20ml</div></div><div class="note">15ml lắc xoáy 5–10ph + 5ml còn lại</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div><div class="sq wfi"></div></div><div class="pill dilute">150ml</div></div><div class="note"><b>Sau hoàn nguyên</b></div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 20–30 phút</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td class="inn-cell">Piperacilin + Tazobactam</td>
+        <td class="brand-cell"><span class="brand-name">TAZOCIN</span><span class="brand-dose">4g+0,5g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon g5" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div></div><div class="note">Thể tích phù hợp</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq wfi"></div><div class="sq rl"></div></div></div><div class="note" style="text-align:left;"><b>Sau hoàn nguyên</b><br>WFI: tối đa 50ml<br>NS, RL: tới thể tích mong muốn<br>(VD 50ml→150ml)</div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> 20–30 phút trở lên</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge room">Dưới 25°C 24 giờ</span> hoặc <span class="badge cold">2–8°C 48 giờ</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td class="inn-cell">Ticarcilin + A.Clavulanic</td>
+        <td class="brand-cell"><span class="brand-name">TICARLINAT</span><span class="brand-dose">1,5g+0,1g</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg><svg class="drop-icon ns" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq wfi"></div></div><div class="pill dilute">50ml</div></div><div class="note"><b>Sau hoàn nguyên</b><br>G5%: 100ml</div></div></td>
+        <td>
+          <div class="route-line"><b>TMC</b> <span class="vol-box">10ml</span>, 3–4 phút</div>
+          <div class="route-line"><b>Truyền TM</b> 20–30 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">Tránh truyền kéo dài: có thể gây nồng độ thấp dưới nồng độ điều trị</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge now">Dùng ngay</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td class="inn-cell">Tinidazol</td>
+        <td class="brand-cell"><span class="brand-name">TINIDAZOL Kabi</span><span class="brand-dose">500mg</span></td>
+        <td><div class="visual"><span class="pending">Dung dịch pha sẵn</span></div></td>
+        <td><div class="visual"><span class="pending">Không cần pha loãng</span></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> </div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td class="inn-cell">Vancomycin</td>
+        <td class="brand-cell"><span class="brand-name">VANCOMYCIN</span><span class="brand-dose">500mg</span></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><svg class="drop-icon wfi" viewBox="0 0 24 24"><path d="M12 2C12 2 5 11 5 16A7 7 0 0 0 19 16C19 11 12 2 12 2Z"/></svg></div><div class="pill recon">10ml</div></div><div class="note">Nồng độ 50mg/ml</div></div></td>
+        <td><div class="visual"><div class="opt"><div class="icon-set"><div class="sq ns"></div><div class="sq g5"></div></div></div><div class="note"><b>Sau hoàn nguyên</b><br>Nồng độ ≤5mg/ml</div></div></td>
+        <td>
+          <div class="route-line"><b>Truyền TM</b> ≥60 phút</div>
+          <div class="route-line" style="font-size:10.5px;color:var(--ink-soft);">Có thể truyền liên tục trong 24 giờ</div>
+        </td>
+        <td>
+          <div class="store-line"><span class="badge room">Điều kiện thường 24 giờ</span></div>
+          <div class="store-detail">Sau pha trong 10ml WFI</div>
+        </td>
+      </tr>
+
+</tbody>
+  </table>
+
+  <div class="legend">
+    <div>
+      <h3>Dung môi / Dung dịch</h3>
+      <div class="legend-row"><div class="sq wfi"></div> Nước cất pha tiêm (WFI)</div>
+      <div class="legend-row"><div class="sq ns"></div> NaCl 0,9% (NS)</div>
+      <div class="legend-row"><div class="sq g5"></div> Glucose/Dextrose 5% (G5%/D5%)</div>
+      <div class="legend-row"><div class="sq g10"></div> Glucose/Dextrose 10% (G10%/D10%)</div>
+      <div class="legend-row"><div class="sq rl"></div> Ringer Lactat (RL)</div>
+    </div>
+    <div>
+      <h3>Chữ viết tắt</h3>
+      <div class="abbr-grid">
+        <div><b>TB</b> — Tiêm bắp</div>
+        <div><b>TM</b> — Tiêm tĩnh mạch</div>
+        <div><b>TMC</b> — Tiêm tĩnh mạch chậm</div>
+        <div><b>Truyền TM</b> — Truyền tĩnh mạch</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:11px;color:var(--ink-soft);font-style:italic;margin-top:8px;">Tài liệu tham khảo: Hướng dẫn sử dụng NSX, Dược thư Quốc gia Việt Nam 2022.</div>
+
+  <div class="signoff">
+    <div>Bộ phận Dược Lâm Sàng - Khoa Dược</div>
+  </div>
+
+</div>
+</body>
+</html>
